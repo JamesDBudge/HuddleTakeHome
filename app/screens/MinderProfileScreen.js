@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Image,
+  ImageBackground,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -13,46 +14,55 @@ function MinderProfileScreen(props) {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View>
-          <Text style={styles.topText}>ᗕ Minder Profile</Text>
+        <View style={styles.topText}>
+          <Text style={styles.titleText}>ᗕ Minder Profile</Text>
         </View>
         <View>
-          <Image style={styles.minder} source={minder.profileURL}></Image>
+          <View style={styles.paginationBar}>
+            <PurpleCircle></PurpleCircle>
+            <GreyCircle></GreyCircle>
+            <GreyCircle></GreyCircle>
+            <GreyCircle></GreyCircle>
+            <GreyCircle></GreyCircle>
+          </View>
+          <View>
+            <Image style={styles.minder} source={minder.profileURL}></Image>
+          </View>
+          <View>
+            <Image
+              style={styles.minderCard}
+              source={require("../assets/images/cardbase.png")}
+            ></Image>
+          </View>
         </View>
-        <View>
-          <Image
-            style={styles.minderCard}
-            source={require("../assets/images/cardbase.png")}
-          ></Image>
-        </View>
-        <View>
-          <Text style={styles.aboutText}>About {minder.firstName}</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
+        <View style={styles.aboutText}>
+          <Text style={styles.titleText}>About {minder.firstName}</Text>
+          <Divider></Divider>
           <Text>{minder.about}</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
+          <Divider></Divider>
           <Text>Read More</Text>
         </View>
         <View>
-          <Text>You Both Know</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text style={styles.titleText}>You Both Know</Text>
+          <Divider></Divider>
           <Image source={minder.commonFriends.asdasdsads1.profileURL}></Image>
           <Image source={minder.commonFriends.asdasdsads2.profileURL}></Image>
           <Image source={minder.commonFriends.asdasdsads3.profileURL}></Image>
         </View>
         <View>
-          <Text>Certificates and Verifications</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
-          <Text>certs go here</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text style={styles.titleText}>Certificates and Verifications</Text>
+          <Divider></Divider>
+          <Text>certs components go here</Text>
+          <Divider></Divider>
           <Text>* Available on request</Text>
         </View>
         <View>
-          <Text>Reviews</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
-          <Text>Review 1</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
-          <Text>Review 2</Text>
-          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text style={styles.titleText}>Reviews</Text>
+          <Divider></Divider>
+          <Text>Review component 1</Text>
+          <Divider></Divider>
+          <Text>Review component 2</Text>
+          <Divider></Divider>
           <Text>Read All</Text>
         </View>
       </ScrollView>
@@ -61,16 +71,24 @@ function MinderProfileScreen(props) {
 }
 
 const styles = StyleSheet.create({
+  paginationBar: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  titleText: {
+    fontWeight: "bold",
+  },
   topText: {
     flex: 1,
     fontSize: 20,
-    left: "5%",
+    // left: "5%",
     alignContent: "center",
     padding: 15,
   },
   minder: {
     flex: 1,
     width: "100%",
+    // height: "80%",
   },
   minderCard: {
     flex: 1,
@@ -90,12 +108,30 @@ const styles = StyleSheet.create({
   },
 });
 
+const Divider = () => (
+  <Image source={require("../assets/images/divider.png")}></Image>
+);
+
 const PurpleCircle = () => (
   <View
     style={{
+      flex: 1,
       width: 10,
       height: 10,
-      backgroundColor: purple,
+      backgroundColor: "#9B3FD9",
+      borderRadius: 5,
+    }}
+  />
+);
+
+const GreyCircle = () => (
+  <View
+    style={{
+      flex: 1,
+      width: 10,
+      height: 10,
+      backgroundColor: "#EEEEEE",
+      borderRadius: 5,
     }}
   />
 );
