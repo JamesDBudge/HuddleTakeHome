@@ -32,6 +32,20 @@ function MinderProfileScreen(props) {
           <Image source={require("../assets/images/divider.png")}></Image>
           <Text>Read More</Text>
         </View>
+        <View>
+          <Text>You Both Know</Text>
+          <Image source={require("../assets/images/divider.png")}></Image>
+          <Image source={minder.commonFriends.asdasdsads1.profileURL}></Image>
+          <Image source={minder.commonFriends.asdasdsads2.profileURL}></Image>
+          <Image source={minder.commonFriends.asdasdsads3.profileURL}></Image>
+        </View>
+        <View>
+          <Text>Certificates and Verifications</Text>
+          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text>certs go here</Text>
+          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text>* Available on request</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
