@@ -1,0 +1,12 @@
+{
+  "name": "HuddleProfileScreen",
+  "displayName": "HuddleProfileScreen",
+  "expo": {
+    "name": "HuddleProfileScreen",
+    "slug": "HuddleProfileScreen",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
