@@ -46,6 +46,15 @@ function MinderProfileScreen(props) {
           <Image source={require("../assets/images/divider.png")}></Image>
           <Text>* Available on request</Text>
         </View>
+        <View>
+          <Text>Reviews</Text>
+          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text>Review 1</Text>
+          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text>Review 2</Text>
+          <Image source={require("../assets/images/divider.png")}></Image>
+          <Text>Read All</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
