@@ -14,25 +14,28 @@ function MinderProfileScreen(props) {
   return (
     <SafeAreaView>
       <ScrollView>
-        <View style={styles.topText}>
+        {/* <View style={styles.topText}>
           <Text style={styles.titleText}>ᗕ Minder Profile</Text>
-        </View>
+        </View> */}
         <View>
-          <View style={styles.paginationBar}>
-            <PurpleCircle></PurpleCircle>
-            <GreyCircle></GreyCircle>
-            <GreyCircle></GreyCircle>
-            <GreyCircle></GreyCircle>
-            <GreyCircle></GreyCircle>
-          </View>
-          <View>
-            <Image style={styles.minder} source={minder.profileURL}></Image>
-          </View>
-          <View>
-            <Image
-              style={styles.minderCard}
-              source={require("../assets/images/cardbase.png")}
-            ></Image>
+          <View style={styles.outerminder}>
+            <ImageBackground style={styles.minder} source={minder.profileURL}>
+              <View style={styles.paginationBar}>
+                <View style={styles.emptySpace}></View>
+                <PurpleCircle></PurpleCircle>
+                <GreyCircle></GreyCircle>
+                <GreyCircle></GreyCircle>
+                <GreyCircle></GreyCircle>
+                <GreyCircle></GreyCircle>
+                <View style={styles.emptySpace}></View>
+              </View>
+              <View>
+                <Image
+                  style={styles.minderCard}
+                  source={require("../assets/images/cardbase.png")}
+                ></Image>
+              </View>
+            </ImageBackground>
           </View>
         </View>
         <View style={styles.aboutText}>
@@ -71,9 +74,16 @@ function MinderProfileScreen(props) {
 }
 
 const styles = StyleSheet.create({
+  emptySpace: {
+    flex: 5,
+  },
+  outerminder: {
+    height: 250,
+  },
   paginationBar: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    top: 150,
   },
   titleText: {
     fontWeight: "bold",
@@ -88,13 +98,13 @@ const styles = StyleSheet.create({
   minder: {
     flex: 1,
     width: "100%",
-    // height: "80%",
+    // height: 400,
   },
   minderCard: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    top: -50,
+    top: -150,
     left: "5%",
     width: "90%",
     borderRadius: 20,
@@ -120,6 +130,7 @@ const PurpleCircle = () => (
       height: 10,
       backgroundColor: "#9B3FD9",
       borderRadius: 5,
+      margin: 10,
     }}
   />
 );
@@ -132,6 +143,7 @@ const GreyCircle = () => (
       height: 10,
       backgroundColor: "#EEEEEE",
       borderRadius: 5,
+      margin: 10,
     }}
   />
 );
